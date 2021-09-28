@@ -1,12 +1,15 @@
-let firstCard = 10
-let secondCard = 11
-let sum = firstCard + secondCard
+let firstCard
+let secondCard
+let sum
 let hasBlackJack = false
 let isAlive = true
 let message = ""
 
 // function for the start button
 function startGame(){
+    firstCard = parseInt(prompt("Enter a card number: "))
+    secondCard = parseInt(prompt("Enter a card number: "))
+    sum = firstCard + secondCard
     // document.getElementById('sumEl').textContent = "Sum: " + sum
     document.querySelector('#sumEl').textContent = "Sum: " + sum
 
@@ -25,4 +28,12 @@ function startGame(){
         document.getElementById('result').textContent = message
         isAlive = false
     }
+}
+
+
+function newCard(){
+    NewCard = parseInt(prompt("Enter a card number: "))
+    sum += NewCard
+
+    startGame()
 }
