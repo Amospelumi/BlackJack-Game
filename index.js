@@ -49,4 +49,5 @@ function newCARD(){
     document.getElementById('sumEl').textContent = sum
 
     renderGame()
+    
 }
