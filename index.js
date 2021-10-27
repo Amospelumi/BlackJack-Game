@@ -1,20 +1,32 @@
-let firstCard = Math.floor(Math.random()*6)
-let secondCard = Math.floor(Math.random()*6)
+let firstCard = getRandomNumbers()
+let secondCard = getRandomNumbers()
 let cards = [firstCard, secondCard]
 let message = ""
-
-// Cards Addition
 let sum = cards[0] + cards[1]
+
+
+//function to get a random number....
+
+function getRandomNumbers(){
+    let randomNumers = Math.floor(Math.random()*13) + 1
+    if(randomNumers > 10){
+        return 11
+    }else if(randomNumers === 1){
+        return 10
+    }else{
+        return randomNumers
+    }
+    
+}
+
 
 function startGame(){
     renderGame()
 }
 
 // function for the start button
-function renderGame(){
-    
+function renderGame(){ 
     let cardEL = document.querySelector('#cardEl').textContent = "Cards " 
-
     for(let i = 0; i < cards.length; i++){
         cardEL = document.querySelector('#cardEl').textContent += cards[i] + " "
     }
@@ -40,7 +52,7 @@ function renderGame(){
 
 
 function newCARD(){
-    let anotherCard = Math.floor(Math.random()*6)
+    let anotherCard = getRandomNumbers()
 
     sum += anotherCard
     cards.push(anotherCard)
